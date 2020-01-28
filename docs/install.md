@@ -8,7 +8,8 @@ Supported queue systems and schedulers:
 
 * PBS torque,
 * Moab (Adaptive Computing),
-* SUN Grid Engine.
+* SUN Grid Engine,
+* Slurm Workload Manager.
 
 
 ## Installation
@@ -28,7 +29,8 @@ option should be set appropriately, i.e.,
 
 * `torque` for PBS torque,
 * `moab` for Adaptive Computing Moab,
-* `sge` for SUN Grid Engine.
+* `sge` for SUN Grid Engine,
+* `slurm` for Slurm Workload Manager.
 
 The default is `torque`
 

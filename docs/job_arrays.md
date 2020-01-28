@@ -6,8 +6,9 @@ This is simply a number out of a range specified when the job is submitted.
 For the resource managers and schedulers supported by `atools`, that would
 be
 * `PBS_ARRAYID` for PBS torque,
-* `MOAB_JOBARRAYINDEX` for Adaptive's Moab, and
-* `SGE_TASKID` for SUN Grid Engine (SGE).
+* `MOAB_JOBARRAYINDEX` for Adaptive's Moab,
+* `SGE_TASKID` for SUN Grid Engine (SGE), and
+* `SLURM_ARRAY_TASK_ID` for Slurm Workload Manager.
 
 Typically, this task identifier is then use to determine, e.g., the
 specific input file for this task in the job script:
@@ -17,12 +18,13 @@ INPUT_FILE="input-${PBS_ARRAYID}.csv"
 ...
 ```
 
-Submitting arrays jobs is quite simple.  For each of the supported queue
-systems and schedulers, one simply adds the `-t <int-range>` options to
+Submitting arrays jobs is quite simple.  For Torque, Moab and Sun Grid
+Engine, one simply adds the `-t <int-range>` options to
 the submission command, `qsub` for PBS torque and SUN grid engine, `msub`
-for Moab, e.g., for PBS torque:
+for Moab. For Slurm Workload Manager, one adds the `--array < int-range>` 
+option to the `sbatch` command. E.g., for PBS torque:
 ```bash
-$ qsub  -t 1-250  bootstrap.pbs
+$ qsub -t 1-250  bootstrap.pbs
 ```
 The submission command above would create a job array of 250 tasks, and
 for each the `PBS_ARRAYID` environment variable would be assigned a unique
