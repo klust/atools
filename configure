@@ -2426,7 +2426,7 @@ END
 fi
 
 
-ac_config_files="$ac_config_files Makefile bin/Makefile conf/Makefile lib/Makefile lib/vsc/Makefile lib/vsc/atools/Makefile reduce/Makefile"
+ac_config_files="$ac_config_files Makefile bin/Makefile conf/Makefile lib/Makefile lib/vsc/Makefile lib/vsc/atools/Makefile reduce/Makefile tmpls/Makefile"
 
 
 # set batch system option
@@ -3244,6 +3244,7 @@ do
     "lib/vsc/Makefile") CONFIG_FILES="$CONFIG_FILES lib/vsc/Makefile" ;;
     "lib/vsc/atools/Makefile") CONFIG_FILES="$CONFIG_FILES lib/vsc/atools/Makefile" ;;
     "reduce/Makefile") CONFIG_FILES="$CONFIG_FILES reduce/Makefile" ;;
+    "tmpls/Makefile") CONFIG_FILES="$CONFIG_FILES tmpls/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac
