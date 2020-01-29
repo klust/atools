@@ -222,9 +222,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 tmplsdir = $(prefix)/tmpls
-dist_tmpls_DATA = empty_csv tmpls_csv \
-                   empty_text tmpls_text \
-                   empty_body tmpls_body tmpls_body.py
+dist_tmpls_DATA = job_script.tmpl
 
 all: all-am
 
