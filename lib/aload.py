@@ -48,14 +48,16 @@ def show_item_stats(analyzer):
 def show_slave_stats(analyzer):
     results = analyzer.slave_stats(options.no_failed)
     fmt_str = (
-        '\tnr. slaves:    {0:d}\n'
-        '\tavg. time (s): {1:.2f}\n'
-        '\tmin. time (s): {2:d}\n'
-        '\tmax. time (s): {3:d}\n'
-        '\ttot. time (s): {4:d}'
+        '\tslave {0}:\n'
+        '\t- nr. tasks:     {1:d}\n'
+        '\t- avg. time (s): {2:.2f}\n'
+        '\t- min. time (s): {3:d}\n'
+        '\t- max. time (s): {4:d}\n'
+        '\t- tot. time (s): {5:d}'
     )
     print('slave statistics:')
-    print(fmt_str.format(*results))
+    for slave_c in range(0, len(results)):
+        print(fmt_str.format(*results[slave_c]))
 
 if __name__ == '__main__':
     arg_parser = ArgumentParser(description='Compute the array ID range')
