@@ -35,7 +35,7 @@ name pattern specification.
 When one or more tasks failed, you may not want to aggregate the output of
 those tasks since it may be incomplete and/or incorrect.  In that case,
 simply use [`arange`](arange.md) to determine the task identifiers of the
-completed task using the `--list_completed` flag.
+completed task using the `--completed` flag.
 
 To handle more interesting cases, you can supply two scripts that
 each take two arguments: the name of the resulting file, and the name of
