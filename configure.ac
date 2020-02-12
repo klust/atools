@@ -9,6 +9,7 @@ AC_CONFIG_FILES([
     lib/vsc/Makefile
     lib/vsc/atools/Makefile
     reduce/Makefile
+    tmpls/Makefile
 ])
 
 # set batch system option
@@ -16,7 +17,7 @@ AC_ARG_WITH(
     [batchsystem],
     AS_HELP_STRING(
          [--with-batchsystem=SYSTEM],
-         [Scheduler to use: torque, moab, sge; default=torque]
+         [Scheduler to use: torque, moab, sge, slurm; default=torque]
      )
 )
 
@@ -44,7 +45,8 @@ AS_CASE([$with_batchsystem],
     [torque], [],
     [moab], [],
     [sge], [],
-    [AC_MSG_ERROR([batch system should be one of torque, moab, or sge])]
+    [slurm], [],
+    [AC_MSG_ERROR([batch system should be one of torque, moab, sge, slurm])]
 )
 
 # if unset, set reduce mode to default, check validity
